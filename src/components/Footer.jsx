@@ -34,7 +34,7 @@ function Footer() {
         </div>
         <div id="quick-links">
           <h1>Quick Links</h1>
-          <NavLink >Home</NavLink>
+          <NavLink>Home</NavLink>
           <NavLink>About</NavLink>
           <NavLink>Projects</NavLink>
           <NavLink>Services</NavLink>
@@ -43,16 +43,19 @@ function Footer() {
         <div id="social-links">
           <h1>Social Links</h1>
           <NavLink>
-            <FaGithub />
+            <FaGithub /> GitHub
           </NavLink>
           <NavLink>
             <FaLinkedinIn />
+            LinkedIn
           </NavLink>
           <NavLink>
             <FaInstagram />
+            Instagram
           </NavLink>
-          <NavLink>
+          <NavLink to="https://my-portfolio-f-five.vercel.app/">
             <CgWebsite />
+            My Portfolio
           </NavLink>
         </div>
       </section>
