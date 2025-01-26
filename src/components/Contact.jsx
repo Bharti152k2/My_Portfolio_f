@@ -22,13 +22,15 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
+      const response = await fetch(
         "https://portfolio-backend-eta-red.vercel.app/api/contact",
-        formData,
         {
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(formData),
+          mode: "no-cors",
         }
       );
       console.log(response);
