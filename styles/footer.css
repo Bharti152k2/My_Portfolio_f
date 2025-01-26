@@ -1,6 +1,6 @@
 footer {
   /* background-color: black; */
-  height: 10rem;
+  border: 2px solid black;
 }
 footer section {
   display: flex;

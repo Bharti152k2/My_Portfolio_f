@@ -1,0 +1,31 @@
+.reach {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid purple;
+}
+.details {
+  width: 70rem;
+  border: 2px solid red;
+  display: flex;
+  align-self: center;
+  background-color: bisque;
+  border-radius: 20px;
+  padding: 2rem;
+  height: 18rem;
+}
+.form {
+  width: 50rem;
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+}
+.reach-links {
+  width: 50rem;
+  border: 2px solid green;
+}
+.input {
+  border: none;
+  border-bottom: 2px solid grey;
+  background: transparent;
+}

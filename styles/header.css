@@ -1,8 +1,27 @@
 header {
+  padding: 0px 2rem;
   background-color: purple;
   height: 4.5rem;
   display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
 }
 header ul {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header span {
+  color: white;
+}
+header ul li a {
+  color: white;
+}
+.pages {
+  width: 30rem;
+}
+.links {
+  width: 10rem;
 }

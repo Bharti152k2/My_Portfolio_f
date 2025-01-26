@@ -9,7 +9,7 @@ function Header() {
   return (
     <header>
       <span>B</span>
-      <ul type="none">
+      <ul type="none" className="pages">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -29,7 +29,7 @@ function Header() {
           <NavLink to="/contact">Contact</NavLink>
         </li>
       </ul>
-      <ul type="none">
+      <ul type="none" className="links">
         <li>
           <NavLink>
             <FaGithub to="https://github.com/Bharti152k2" />
