@@ -9,6 +9,7 @@ function Contact() {
     message: "",
     email: "",
   });
+  console.log("Sending Form Data:", formData); // Log the data
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,18 +23,17 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
+      const response = await axios.post(
         "https://portfolio-backend-eta-red.vercel.app/api/contact",
+        formData,
         {
-          method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json", // Ensure the content type is set to JSON
           },
-          body: JSON.stringify(formData),
-          mode: "no-cors",
         }
       );
       console.log(response);
+      console.log(formData);
       if (!response.error) {
         alert("Your message was sent successfully!");
         setFormData({ name: "", message: "", email: "" });
