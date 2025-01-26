@@ -34,33 +34,31 @@ function Footer() {
         </div>
         <div id="quick-links">
           <h1>Quick Links</h1>
-          <NavLink>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Projects</NavLink>
-          <NavLink>Services</NavLink>
-          <NavLink>Contact</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/skills">Skills</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </div>
         <div id="social-links">
           <h1>Social Links</h1>
-          <NavLink>
-            <FaGithub /> GitHub
+          <NavLink to="https://github.com/Bharti152k2">
+            <FaGithub />
           </NavLink>
-          <NavLink>
+          <NavLink to="https://www.linkedin.com/in/vijay-bharti-sakarwal-584b90259/">
             <FaLinkedinIn />
-            LinkedIn
           </NavLink>
           <NavLink>
-            <FaInstagram />
-            Instagram
+            <FaInstagram to="https://www.instagram.com/_bha_rti98/" />
           </NavLink>
           <NavLink to="https://my-portfolio-f-five.vercel.app/">
             <CgWebsite />
-            My Portfolio
           </NavLink>
         </div>
       </section>
       <p id="copy-right">
-        © <span id="year">{year}</span> Bharti. All Rights Reserved.
+        © <span id="year"> {year} </span> Bharti. All Rights Reserved.
       </p>
     </footer>
   );

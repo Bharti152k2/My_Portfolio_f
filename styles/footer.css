@@ -12,6 +12,11 @@ footer #copy-right {
   justify-content: center;
   align-items: center;
   height: 1.5rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.2rem;
+}
+#year {
+  margin: 0px 0.2rem;
 }
 #contact,
 #quick-links,
@@ -22,4 +27,7 @@ footer #copy-right {
 }
 a {
   text-decoration: none;
+}
+footer p {
+  color: white;
 }

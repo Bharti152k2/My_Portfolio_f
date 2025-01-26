@@ -1,4 +1,8 @@
 header {
   background-color: purple;
   height: 4.5rem;
+  display: flex;
+}
+header ul {
+  display: flex;
 }
