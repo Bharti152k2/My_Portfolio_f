@@ -6,22 +6,34 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid black;
 }
-header ul {
+header ul,
+header .links {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-header span {
+header span img {
+  width: 9rem;
+
+  /* color: white; */
+  /* font-family:cursive;
+  font-size: 1.5rem; */
+}
+header ul li a,
+header .links a {
   color: white;
 }
-header ul li a {
-  color: white;
+
+header ul li a:hover,
+header .links a:hover {
+  color: green;
 }
 .pages {
   width: 30rem;
+  font-size: 1.3rem;
 }
 .links {
   width: 10rem;
+  font-size: 1.2rem;
 }

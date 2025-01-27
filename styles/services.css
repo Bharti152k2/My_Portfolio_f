@@ -1,0 +1,22 @@
+.services-page {
+  background-color: aliceblue;
+}
+.service-list {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 150px;
+}
+.service-item{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 18rem;
+padding: 20px;
+}
+.icon{
+    font-size: 5rem;
+}
