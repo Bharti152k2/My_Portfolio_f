@@ -30,6 +30,7 @@ function Contact() {
           headers: {
             "Content-Type": "application/json", // Ensure the content type is set to JSON
           },
+          mode: "no-cors",
         }
       );
       console.log(response);
