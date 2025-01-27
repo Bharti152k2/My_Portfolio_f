@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import "../../styles/contact.css";
 import g7 from "../assets/g7.jpg";
 import axios from "axios";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 // https://portfolio-backend-eta-red.vercel.app/api/contact
 function Contact() {
   const [formData, setFormData] = useState({
@@ -101,8 +110,69 @@ function Contact() {
           </form>
         </div>
         <div className="reach-links">
-          <img src={g7} alt="description" height="200rem" />
-          <aside>address an links</aside>
+          <aside className="contact-photo">
+            <img src={g7} alt="description" height="300rem" />
+            <h1>Social Links : </h1>
+            <ul type="none" className="contact-links">
+              <li>
+                <NavLink>
+                  <FaGithub to="https://github.com/Bharti152k2" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink>
+                  <FaLinkedinIn to="https://www.linkedin.com/in/vijay-bharti-sakarwal-584b90259/" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink>
+                  <FaInstagram to="https://www.instagram.com/_bha_rti98/" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="mailto:nidhi15sak@gmail.com">
+                  <MdOutlineEmail />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="tel:+918764340543">
+                  <FaPhoneAlt />
+                </NavLink>
+              </li>
+            </ul>
+          </aside>
+          <aside>
+            <h1>My Address:</h1>
+            <p>
+              <span style={{ textDecoration: "underline" }}>
+                Permanent Addrress:
+              </span>{" "}
+              <br />
+              Hardeep Nagar, Jalandhar, <br /> Punjab,144009
+            </p>
+            <p>
+              <span style={{ textDecoration: "underline" }}>
+                Residential Addrress:
+              </span>
+              <br />
+              88,Ratna Vilas Road, <br /> Bangalore,560004
+            </p>
+            <h1>Contact at:</h1>
+
+            <div id="c3">
+              <NavLink to="mailto:nidhi15sak@gmail.com">
+                <MdOutlineEmail />
+                 nidhi15sak@gmail.com
+              </NavLink>
+
+              <NavLink to="tel:+918764340543">
+                <FaPhoneAlt /> +91 8764340543
+              </NavLink>
+              <NavLink to="tel:+918764340543">
+                <FaWhatsapp /> +91 8764340543
+              </NavLink>
+            </div>
+          </aside>
         </div>
       </article>
     </section>

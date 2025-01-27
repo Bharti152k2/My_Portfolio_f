@@ -30,7 +30,7 @@ function Footer() {
               <FaWhatsapp /> +91 8764340543
             </NavLink>
           </span>
-          <span>Address: Hardeep Nagar, Jalandhar, Punjab, 144009</span>
+          <span>Address: Hardeep Nagar, <br /> Jalandhar, Punjab, 144009</span>
         </div>
         <div id="quick-links">
           <h1>Quick Links</h1>
