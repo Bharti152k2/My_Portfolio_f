@@ -1,0 +1,31 @@
+.home-banner {
+  display: flex;
+  justify-content: left;
+  height: 113vh;
+  background-position: 20rem -50rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: black;
+  background-image: linear-gradient(
+      rgba(128, 155, 253, 0.4),
+      rgba(255, 128, 230, 0.4)
+    ),
+    url("../src/assets/H.jpg");
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  /* width: 60%; */
+  color: white;
+  padding: 200px;
+}
+.btns {
+  display: flex;
+}
+/* .img {
+  width: 40%;
+}
+.img img {
+  box-shadow: 1px 1px 20px 2px darkmagenta;
+  border-radius: 30px;
+} */

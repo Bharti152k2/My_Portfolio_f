@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "../../styles/contact.css";
-import g7 from "../assets/g7.jpg";
+import B1 from "../assets/M.jpg";
+import B2 from "../assets/B.jpg";
+import B3 from "../assets/F.jpg";
+import B4 from "../assets/G.jpg";
+import B5 from "../assets/H.jpg";
+import B6 from "../assets/K.jpg";
 import axios from "axios";
 import {
   FaGithub,
@@ -111,7 +116,7 @@ function Contact() {
         </div>
         <div className="reach-links">
           <aside className="contact-photo">
-            <img src={g7} alt="description" height="300rem" />
+            <img src={B3} alt="description" height="300rem" />
             <h1>Social Links : </h1>
             <ul type="none" className="contact-links">
               <li>
