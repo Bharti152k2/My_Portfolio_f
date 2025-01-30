@@ -7,7 +7,9 @@ footer section {
   justify-content: space-around;
 }
 footer #copy-right {
-  background-color: purple;
+  /* background-color: #00C9A7 ; */
+  background-color: #F8F8F8   ;
+  /* background-color: #FF4E50  ; */
   display: flex;
   justify-content: center;
   align-items: center;

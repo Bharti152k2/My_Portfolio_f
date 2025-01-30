@@ -18,22 +18,7 @@ function Home() {
           <button>let's talk</button>
         </div>
       </article>
-      {/* <article className="img">
-        <img src={B1} alt="" width="500px"/>
-      </article> */}
     </section>
-    //   <section>
-    //   <article>
-    //     <h3>greetings</h3>
-    //     <h1>designation</h1>
-    //     <p>descriptiom</p>
-    //     <div>
-    //       <button>resume download</button>
-    //       <button>let's talk</button>
-    //     </div>
-    //   </article>
-    //   <article>photo</article>
-    // </section>
   );
 }
 

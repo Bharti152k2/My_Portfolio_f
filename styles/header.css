@@ -1,8 +1,10 @@
 header {
   padding: 0px 2rem;
-  background-image: linear-gradient(90deg, green, pink);
+  /* background-image: linear-gradient(90deg, green, pink); */
+  background-color: black;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   height: 4.5rem;
-  display: flex;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +24,7 @@ header span img {
 }
 header ul li a,
 header .links a {
-  color: white;
+  color: #ffd700;
 }
 
 header ul li a:hover,
