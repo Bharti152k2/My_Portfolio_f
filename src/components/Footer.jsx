@@ -30,7 +30,9 @@ function Footer() {
               <FaWhatsapp /> +91 8764340543
             </NavLink>
           </span>
-          <span>Address: 88, Ratna Vilas Road <br /> Bangalore, Karnataka, 560004</span>
+          <span>
+            Address: 88, Ratna Vilas Road <br /> Bangalore, Karnataka, 560004
+          </span>
         </div>
         <div id="quick-links">
           <h1>Quick Links</h1>
@@ -39,6 +41,8 @@ function Footer() {
           <NavLink to="/skills">Skills</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/services">Services</NavLink>
+          <NavLink to="/educational">Educational</NavLink>
+          <NavLink to="/tools">Tools</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </div>
         <div id="social-links">

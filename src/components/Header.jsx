@@ -1,17 +1,16 @@
 import React from "react";
 import "../../styles/header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaGithub, FaInstagram, FaLinkedinIn, FaPhone } from "react-icons/fa6";
 import { CgWebsite } from "react-icons/cg";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import logo from "../../src/assets/logo.png";
 function Header() {
+  const navigateToContact = useNavigate();
   return (
     <header>
-      <span>
-        <img src={logo} alt="" />
-      </span>
+      <span className="logo">Bharti</span>
       <ul type="none" className="pages">
         <li>
           <NavLink to="/">Home</NavLink>
@@ -29,10 +28,17 @@ function Header() {
           <NavLink to="/services">Services</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/educational">Educational</NavLink>
         </li>
+        <li>
+          <NavLink to="/tools">Tools</NavLink>
+        </li>
+        {/* <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li> */}
       </ul>
-      <div className="links">
+      <button className="contact" onClick={() => navigateToContact("/contact")}>Let's Talk</button>
+      {/* <div className="links">
         <NavLink>
           <FaGithub to="https://github.com/Bharti152k2" />
         </NavLink>
@@ -48,7 +54,7 @@ function Header() {
         <NavLink to="tel:+918764340543">
           <FaPhoneAlt />
         </NavLink>
-      </div>
+      </div> */}
     </header>
   );
 }

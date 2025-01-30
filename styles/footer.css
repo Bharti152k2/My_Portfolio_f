@@ -1,15 +1,12 @@
 footer {
-  /* background-color: black; */
-  border: 2px solid black;
+  background-color: white;
 }
 footer section {
   display: flex;
   justify-content: space-around;
 }
 footer #copy-right {
-  /* background-color: #00C9A7 ; */
-  background-color: #F8F8F8   ;
-  /* background-color: #FF4E50  ; */
+  background-color: palevioletred;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,9 +24,29 @@ footer #copy-right {
   flex-direction: column;
   align-items: center;
 }
+#contact h1,
+#quick-links h1,
+#social-links h1 {
+  /* color: yellow; */
+  color: #000080;
+  /* color:#FF1493; */
+}
 a {
   text-decoration: none;
 }
-footer p {
+footer span,
+footer a {
+  color: #ff1493;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+footer span:hover,
+footer a:hover {
+  color: rgb(211, 195, 16);
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+footer p,
+p > span {
   color: white;
 }

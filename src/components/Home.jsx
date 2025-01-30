@@ -10,12 +10,18 @@ function Home() {
   return (
     <section className="home-banner">
       <article className="intro">
-        <h3>greetings</h3>
-        <h1>designation</h1>
-        <p>descriptiom</p>
+        <h3>Hii there,</h3>
+        <h1>I'm Bharti</h1>
+        <h1>Full Stack Developer</h1>
+        <p>
+          A passionate MERN stack developer dedicated to building exceptional
+          web applications. I transform ideas into reality <br /> using MERN. With a
+          keen eye for detail and a problem-solving mindset, I create solutions
+          that make an impact.
+        </p>
         <div className="btns">
-          <button>resume download</button>
-          <button>let's talk</button>
+          <button>Resume Download</button>
+          <button>Let's Talk</button>
         </div>
       </article>
     </section>

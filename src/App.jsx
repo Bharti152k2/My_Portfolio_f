@@ -9,6 +9,8 @@ import Skills from "./components/Skills";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
+import Educational from "./components/Educational";
+import Tools from "./components/Tools";
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +21,8 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Tools />} />
+        <Route path="/services" element={<Educational />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
