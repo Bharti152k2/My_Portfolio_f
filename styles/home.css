@@ -1,14 +1,15 @@
 .home-banner {
   display: flex;
   justify-content: space-between;
-  height: 80vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  /* height: 80vh; */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../src/assets/M.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  padding-top: 8rem;
+  background-size: cover; */
+  /* padding-top: 8rem; */
   font-family: cursive;
+  background-color: black;
 }
 
 .intro {
