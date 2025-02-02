@@ -6,7 +6,7 @@ import "../../styles/services.css";
 function Services() {
   return (
     <section className="services">
-      <h1>My Services</h1>
+      <h1>What I do </h1>
       <div className="service-list">
         {service.map((item, index) => {
           const IconComponent =

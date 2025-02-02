@@ -116,7 +116,21 @@ function Contact() {
         </div>
         <div className="reach-links">
           <aside className="contact-photo">
-            <img src={B3} alt="description" height="300rem" />
+            {/* <img src={B3} alt="description" height="300rem" /> */}
+            <h1>Contact at:</h1>
+            <div id="c3">
+              <NavLink to="mailto:nidhi15sak@gmail.com">
+                <MdOutlineEmail />
+                nidhi15sak@gmail.com
+              </NavLink>
+
+              <NavLink to="tel:+918764340543">
+                <FaPhoneAlt /> +91 8764340543
+              </NavLink>
+              <NavLink to="tel:+918764340543">
+                <FaWhatsapp /> +91 8764340543
+              </NavLink>
+            </div>
             <h1>Social Links : </h1>
             <ul type="none" className="contact-links">
               <li>
@@ -162,21 +176,6 @@ function Contact() {
               <br />
               88,Ratna Vilas Road, <br /> Bangalore,560004
             </p>
-            <h1>Contact at:</h1>
-
-            <div id="c3">
-              <NavLink to="mailto:nidhi15sak@gmail.com">
-                <MdOutlineEmail />
-                 nidhi15sak@gmail.com
-              </NavLink>
-
-              <NavLink to="tel:+918764340543">
-                <FaPhoneAlt /> +91 8764340543
-              </NavLink>
-              <NavLink to="tel:+918764340543">
-                <FaWhatsapp /> +91 8764340543
-              </NavLink>
-            </div>
           </aside>
         </div>
       </article>

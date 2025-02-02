@@ -1,22 +1,50 @@
-.services-page {
-  background-color: aliceblue;
+.services h1 {
+  background-image: linear-gradient(
+    350deg,
+    rgba(0, 0, 0, 0.6),
+    rgb(169, 27, 96)
+  );
+  height: 4rem;
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 2rem 2rem 0;
+  color: #fff;
 }
 .service-list {
-  background-color: aqua;
+  margin: 0 7rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px 150px;
+  padding: 1rem 3rem;
+  row-gap: 2rem;
 }
-.service-item{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 18rem;
-padding: 20px;
+.service-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease-in-out;
 }
-.icon{
-    font-size: 5rem;
+.service-item:hover {
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(169, 27, 96);
+  transform: translateY(-10px);
+  /* box-shadow: rgba(169, 27, 96, 0.25) 0px 13px 27px -5px,
+              rgba(169, 27, 96, 0.3) 0px 8px 16px -8px; */
+}
+.icon {
+  font-size: 5rem;
+  color: rgb(169, 27, 96);
+}
+.service-item h2,
+.service-item p {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
 }

@@ -1,6 +1,14 @@
 header {
   padding: 0px 2rem;
-  background-color: palevioletred;
+  /* background-color: palevioletred; */
+  /* background-color: #a91b60; */
+  /* background-image: linear-gradient(
+    169deg,
+    rgb(169, 27, 96),
+    rgba(0, 0, 0, 0.6)
+  ); */
+  background-image: linear-gradient(rgb(169, 27, 96), rgba(0, 0, 0, 0.6));
+
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   height: 4.5rem;
@@ -37,7 +45,8 @@ header .links {
 .contact {
   border: none;
   outline: none;
-  background-color: rgb(86, 198, 86);
+  /* background-color: rgb(86, 198, 86); */
+  background-image: linear-gradient(to right, #ff1493, #ff69b4);
   color: white;
   padding: 0.5rem 1rem;
   font-size: 1rem;
