@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // First install: npm install framer-motion
 import { TypeAnimation } from "react-type-animation"; // First install: npm install react-type-animation
-import B7 from "../assets/n.jpg";
 
 function Home() {
   return (
@@ -100,7 +99,7 @@ function Home() {
             className="relative z-10"
           >
             <img
-              src={B7}
+              src="/images/n.jpg"
               alt="Profile"
               className="w-[400px] h-[400px] object-cover rounded-full border-8 border-white shadow-2xl"
             />
