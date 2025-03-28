@@ -13,7 +13,6 @@ function Header() {
     { path: "/about", label: "About" },
     { path: "/services", label: "Services" },
     { path: "/education", label: "Education" },
-    { path: "/tools", label: "Tools" },
   ];
 
   const renderNavLink = (path, label) => (
