@@ -1,34 +1,56 @@
 export const service = [
   {
-    title: "Reactjs",
+    title: "React.js",
     icon: "FaReact",
+    category: "frontend",
+    desc: "Building modern and responsive user interfaces with React.js",
   },
   {
-    title: "Nodejs",
+    title: "Node.js",
+    icon: "FaNodeJs",
+    category: "backend",
+    desc: "Server-side JavaScript runtime for building scalable applications",
+  },
+  {
+    title: "Express.js",
     icon: "FaNode",
-  },
-  {
-    title: "Expressjs",
-    icon: "FaExpressjs",
+    category: "backend",
+    desc: "Fast, unopinionated web framework for Node.js",
   },
   {
     title: "MongoDB",
-    icon: "FaMongoDB",
+    icon: "DiMongodb", // Changed to DiMongodb
+    category: "database",
+    desc: "NoSQL database for modern applications",
   },
   {
-    title: "HTML",
-    icon: "FaHtml",
+    title: "HTML5",
+    icon: "FaHtml5",
+    category: "frontend",
+    desc: "Structuring web content with semantic HTML5",
   },
   {
-    title: "CSS",
-    icon: "FaCss",
+    title: "CSS3",
+    icon: "FaCss3Alt",
+    category: "frontend",
+    desc: "Styling and animating web interfaces with modern CSS",
   },
   {
-    title: "Javascript",
-    icon: "FaJavascript",
+    title: "Tailwind CSS",
+    icon: "SiTailwindcss",
+    category: "frontend",
+    desc: "A utility-first CSS framework for rapid UI development",
+  },
+  {
+    title: "JavaScript",
+    icon: "SiJavascript",
+    category: "frontend",
+    desc: "Programming language for dynamic web applications",
   },
   {
     title: "SQL",
-    icon: "FaSQL",
+    icon: "DiMysql", // Changed to DiMysql
+    category: "database",
+    desc: "Structured Query Language for relational databases",
   },
 ];

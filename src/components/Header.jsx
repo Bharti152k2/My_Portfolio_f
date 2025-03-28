@@ -1,62 +1,68 @@
 import React from "react";
-import "../../styles/header.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaGithub, FaInstagram, FaLinkedinIn, FaPhone } from "react-icons/fa6";
-import { CgWebsite } from "react-icons/cg";
-import { MdOutlineEmail } from "react-icons/md";
-import { FaPhoneAlt } from "react-icons/fa";
-import logo from "../../src/assets/logo.png";
+
 function Header() {
   const navigateToContact = useNavigate();
   return (
-    <header>
-      <span className="logo">Bharti</span>
-      <ul type="none" className="pages">
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/about">About</NavLink>
-        </li>
-        <li>
-          <NavLink to="/skills">Skills</NavLink>
-        </li>
-        <li>
-          <NavLink to="/projects">Projects</NavLink>
-        </li>
-        <li>
-          <NavLink to="/services">Services</NavLink>
-        </li>
-        <li>
-          <NavLink to="/education">Education</NavLink>
-        </li>
-        <li>
-          <NavLink to="/tools">Tools</NavLink>
-        </li>
-        {/* <li>
-          <NavLink to="/contact">Contact</NavLink>
-        </li> */}
-      </ul>
-      <button className="contact" onClick={() => navigateToContact("/contact")}>
-        Let's Talk
-      </button>
-      {/* <div className="links">
-        <NavLink>
-          <FaGithub to="https://github.com/Bharti152k2" />
-        </NavLink>
-        <NavLink>
-          <FaLinkedinIn to="https://www.linkedin.com/in/vijay-bharti-sakarwal-584b90259/" />
-        </NavLink>
-        <NavLink>
-          <FaInstagram to="https://www.instagram.com/_bha_rti98/" />
-        </NavLink>
-        <NavLink to="mailto:nidhi15sak@gmail.com">
-          <MdOutlineEmail />
-        </NavLink>
-        <NavLink to="tel:+918764340543">
-          <FaPhoneAlt />
-        </NavLink>
-      </div> */}
+    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-sm shadow-md z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Bharti
+          </span>
+
+          <ul className="hidden md:flex space-x-8" type="none">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 transition-all ${
+                    isActive ? "text-blue-600 font-medium" : "text-gray-600"
+                  }`
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 transition-all ${
+                    isActive ? "text-blue-600 font-medium" : "text-gray-600"
+                  }`
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/skills">Skills</NavLink>
+            </li>
+            <li>
+              <NavLink to="/projects">Projects</NavLink>
+            </li>
+            <li>
+              <NavLink to="/services">Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="/education">Education</NavLink>
+            </li>
+            <li>
+              <NavLink to="/tools">Tools</NavLink>
+            </li>
+            {/* <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li> */}
+          </ul>
+          <button
+            onClick={() => navigateToContact("/contact")}
+            className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all hover:scale-105"
+          >
+            Let's Talk
+          </button>
+        </div>
+      </div>
     </header>
   );
 }
