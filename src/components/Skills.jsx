@@ -44,13 +44,13 @@ function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="flex justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-12 px-4"
         >
           {filters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full transition-all duration-300 whitespace-nowrap ${
                 activeFilter === filter.id
                   ? "bg-pink-500 text-white shadow-lg scale-105"
                   : "bg-white text-gray-600 hover:bg-pink-50 hover:text-pink-500"

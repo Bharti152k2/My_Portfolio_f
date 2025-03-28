@@ -1,66 +1,63 @@
 import React from "react";
-import B3 from "../assets/F.jpg";
+import { motion } from "framer-motion";
+import { FaMapMarkerAlt, FaGraduationCap, FaLanguage, FaCode, FaEnvelope } from 'react-icons/fa';
+import { MdWork, MdPerson } from 'react-icons/md';
 
 function About() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 min-h-screen bg-gradient-to-br from-pink-50 via-white to-pink-50">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          Who am I?
-        </h1>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-5xl font-bold mb-4 text-gray-800">About Me</h1>
+          <div className="w-20 h-1 bg-pink-500 mx-auto rounded-full"></div>
+        </motion.div>
 
-        <aside className="max-w-6xl mx-auto">
-          {/* Introduction Section */}
-          <section className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Hello! I'm a passionate Full Stack Developer who loves turning
-              ideas into beautiful, functional digital experiences. With a
-              strong foundation in both frontend and backend development, I
-              specialize in creating responsive and user-friendly web
-              applications that make a difference.
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              My journey in tech has equipped me with a diverse skill set, from
-              crafting pixel-perfect user interfaces to building robust
-              server-side solutions. I believe in writing clean, maintainable
-              code and staying current with the latest industry trends and best
-              practices.
-            </p>
-          </section>
-
-          {/* Profile Section */}
-          <section className="grid md:grid-cols-2 gap-8 bg-white rounded-lg shadow-md p-8">
-            <div className="relative">
-              <img
-                src={B3}
-                alt="Profile"
-                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-              />
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-2xl shadow-lg p-8"
+          >
+            <div className="mb-8 border-b border-pink-100 pb-6">
+              <p className="text-gray-600 text-lg">
+                Hello! I'm a passionate Full Stack Developer specializing in MERN stack development. 
+                I create responsive and user-friendly web applications, combining creative design with 
+                efficient functionality.
+              </p>
             </div>
 
-            <div className="space-y-4">
-              <InfoItem label="Name" value="Vijay Bharti Sakarwal" />
-              <InfoItem label="Role" value="Full Stack Developer" />
-              <InfoItem label="Location" value="Bangalore" />
-              <InfoItem label="Experience" value="0-1 years" />
-              <InfoItem label="Education" value="Btech(CSE)" />
-              <InfoItem label="Languages" value="Hindi, English, Punjabi" />
-              <InfoItem label="Expertise" value="MERN Stack Development" />
-              <InfoItem label="Email" value="nidhi15sak@gmail.com" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <InfoItem icon={<MdPerson />} label="Name" value="Vijay Bharti Sakarwal" />
+              <InfoItem icon={<FaCode />} label="Role" value="Full Stack Developer" />
+              <InfoItem icon={<FaMapMarkerAlt />} label="Location" value="Bangalore" />
+              <InfoItem icon={<MdWork />} label="Experience" value="0-1 years" />
+              <InfoItem icon={<FaGraduationCap />} label="Education" value="Btech(CSE)" />
+              <InfoItem icon={<FaLanguage />} label="Languages" value="Hindi, English, Punjabi" />
+              <InfoItem icon={<FaCode />} label="Expertise" value="MERN Stack Development" />
+              <InfoItem icon={<FaEnvelope />} label="Email" value="nidhi15sak@gmail.com" />
             </div>
-          </section>
-        </aside>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 }
 
-// Helper component for info items
-const InfoItem = ({ label, value }) => (
-  <p className="text-gray-700">
-    <strong className="font-semibold text-blue-600">{label}:</strong>{" "}
-    <span className="text-gray-800">{value}</span>
-  </p>
+const InfoItem = ({ icon, label, value }) => (
+  <motion.div 
+    whileHover={{ x: 5 }}
+    className="flex items-center gap-4 p-2 rounded-lg hover:bg-pink-50 transition-colors"
+  >
+    <span className="text-pink-500 text-xl">{icon}</span>
+    <p className="text-gray-700">
+      <strong className="font-semibold text-gray-800">{label}:</strong>{" "}
+      <span className="text-gray-600">{value}</span>
+    </p>
+  </motion.div>
 );
 
 export default About;

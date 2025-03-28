@@ -1,17 +1,25 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-function CustomButton({ children, onClick, isActive }) {
+function CustomButton({ children, onClick, isActive, fullWidth }) {
   return (
-    <button
+    <motion.button
       onClick={onClick}
-      className={`px-6 py-2 rounded-full transition-all ${
-        isActive
-          ? "bg-blue-600 text-white hover:bg-blue-700"
-          : "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-      }`}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className={`
+        ${fullWidth ? 'w-full' : 'w-auto'}
+        px-8 py-3 rounded-lg font-medium
+        shadow-md transition-all duration-300
+        flex items-center justify-center gap-2
+        ${isActive 
+          ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white hover:from-pink-600 hover:to-rose-600 hover:shadow-lg"
+          : "border-2 border-pink-500 text-pink-500 hover:bg-pink-50"
+        }
+      `}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }
 
