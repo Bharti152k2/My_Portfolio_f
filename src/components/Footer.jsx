@@ -15,11 +15,7 @@ function Footer() {
       <section>
         <div id="contact">
           <h1>Contact Me</h1>
-          <span>
-            <NavLink to="mailto:nidhi15sak@gmail.com">
-              <MdOutlineEmail /> nidhi15sak@gmail.com
-            </NavLink>
-          </span>
+
           <span>
             <NavLink to="tel:+918764340543">
               <FaPhone /> +91 8764340543
@@ -28,6 +24,11 @@ function Footer() {
           <span>
             <NavLink to="tel:+918764340543">
               <FaWhatsapp /> +91 8764340543
+            </NavLink>
+          </span>
+          <span>
+            <NavLink to="mailto:nidhi15sak@gmail.com">
+              <MdOutlineEmail /> nidhi15sak@gmail.com
             </NavLink>
           </span>
           <span>

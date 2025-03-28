@@ -28,7 +28,7 @@ function Header() {
           <NavLink to="/services">Services</NavLink>
         </li>
         <li>
-          <NavLink to="/educational">Educational</NavLink>
+          <NavLink to="/education">Education</NavLink>
         </li>
         <li>
           <NavLink to="/tools">Tools</NavLink>
@@ -37,7 +37,9 @@ function Header() {
           <NavLink to="/contact">Contact</NavLink>
         </li> */}
       </ul>
-      <button className="contact" onClick={() => navigateToContact("/contact")}>Let's Talk</button>
+      <button className="contact" onClick={() => navigateToContact("/contact")}>
+        Let's Talk
+      </button>
       {/* <div className="links">
         <NavLink>
           <FaGithub to="https://github.com/Bharti152k2" />

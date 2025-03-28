@@ -27,9 +27,9 @@ function Home() {
           <button>Let's Talk</button>
         </div>
       </article>
-      <article>
+      {/* <article>
         <img src={B7} alt="" width="500px" />
-      </article>
+      </article> */}
     </section>
   );
 }

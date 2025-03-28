@@ -1,15 +1,10 @@
 .home-banner {
   display: flex;
   justify-content: space-between;
-  /* height: 80vh; */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../src/assets/M.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-  /* padding-top: 8rem; */
+    url("../src/assets/D.jpg");
+height: 80vh; */
   font-family: cursive;
-  background-color: black;
 }
 
 .intro {
@@ -17,7 +12,7 @@
   flex-direction: column;
   /* color: #000080; */
   /* color:#FF1493; */
-  color: white;
+  /* color: white; */
   margin-top: -8rem;
   justify-content: center;
 }
