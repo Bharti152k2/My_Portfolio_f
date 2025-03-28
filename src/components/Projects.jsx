@@ -1,5 +1,5 @@
 import React from 'react';
-import { projectData } from '../helper/projects';
+import { projectData } from '../store/projects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 function Projects() {

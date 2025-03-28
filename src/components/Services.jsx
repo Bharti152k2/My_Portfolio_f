@@ -1,7 +1,7 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
-import { service } from "../helper/services";
+import { service } from "../store/services";
 
 function Services() {
   return (

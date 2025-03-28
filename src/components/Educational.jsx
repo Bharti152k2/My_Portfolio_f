@@ -1,5 +1,5 @@
 import React from "react";
-import { educationData } from "../helper/education";
+import { educationData } from "../store/education";
 
 const Educational = () => {
   return (

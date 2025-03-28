@@ -4,7 +4,7 @@ import * as MdIcons from "react-icons/md";
 import * as SiIcons from "react-icons/si";
 import * as DiIcons from "react-icons/di";
 import * as TbIcons from "react-icons/tb";
-import { service } from "../helper/skills";
+import { service } from "../store/skills";
 import CustomButton from "./CustomButton";
 
 function Skills() {
