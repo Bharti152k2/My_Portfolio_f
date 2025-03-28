@@ -8,9 +8,9 @@ function Header() {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
     { path: "/skills", label: "Skills" },
     { path: "/projects", label: "Projects" },
+    { path: "/about", label: "About" },
     { path: "/services", label: "Services" },
     { path: "/education", label: "Education" },
     { path: "/tools", label: "Tools" },
