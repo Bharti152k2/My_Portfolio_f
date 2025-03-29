@@ -24,8 +24,8 @@ function Contact() {
 
     try {
       const response = await fetch(
-        "http://localhost:5001/api/contact",
-        // "https://portfolio-backend-eta-red.vercel.app/api/contact",
+        // "http://localhost:5001/api/contact",
+        "https://portfolio-backend-eta-red.vercel.app/api/contact",
         {
           method: "POST",
           headers: {
