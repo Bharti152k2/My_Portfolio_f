@@ -37,7 +37,7 @@ function Contact() {
             // Origin: "https://my-portfolio-f-five.vercel.app",
             // "Origin": "http://localhost:5173"
           },
-          mode: "cors", // Add CORS mode
+          mode: "no-cors", // Add CORS mode
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
