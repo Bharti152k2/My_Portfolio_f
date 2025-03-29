@@ -27,24 +27,27 @@ function Contact() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Origin": "https://my-portfolio-f-five.vercel.app"
           },
-          credentials: 'include',
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            to: "your-email@gmail.com" // Add your receiving email address
+          }),
         }
       );
 
+      const data = await response.json();
+      
       if (!response.ok) {
-        throw new Error("Failed to send email");
+        throw new Error(data.message || "Failed to send email");
       }
 
-      const data = await response.json();
       setFormData({ name: "", email: "", message: "" });
       alert("Message sent successfully!");
     } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to send message. Please try again.");
+      console.error("Error details:", error);
+      alert(error.message || "Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
