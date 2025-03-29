@@ -1,13 +1,16 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaHeart, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   const year = new Date().getFullYear();
-  
+
   const socialLinks = [
-    { icon: <FaGithub />, url: "https://github.com/yourusername" },
-    { icon: <FaLinkedin />, url: "https://linkedin.com/in/yourusername" },
-    { icon: <FaTwitter />, url: "https://twitter.com/yourusername" }
+    { icon: <FaGithub />, url: "https://github.com/Bharti152k2" },
+    {
+      icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/vijay-bharti-sakarwal-584b90259/",
+    },
+    { icon: <FaInstagram />, url: "https://www.instagram.com/_bha_rti98/" },
   ];
 
   return (
@@ -27,7 +30,7 @@ function Footer() {
               </a>
             ))}
           </div>
-          
+
           <div className="flex items-center text-white/90">
             <span>Made with</span>
             <FaHeart className="text-white mx-2 animate-pulse" />

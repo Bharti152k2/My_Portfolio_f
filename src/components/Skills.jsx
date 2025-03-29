@@ -17,34 +17,35 @@ function Skills() {
     { id: "database", label: "Database" },
   ];
 
-  const filteredSkills = service.filter(item => 
+  const filteredSkills = service.filter((item) =>
     activeFilter === "all" ? true : item.category === activeFilter
   );
 
   return (
     <section className="py-20 min-h-screen bg-gradient-to-br from-pink-50 via-white to-pink-50">
-      <div className="container mx-auto px-4">
-        <motion.h1 
+      <div className="container mx-auto px-6 sm:px-8 max-w-7xl">
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-5xl font-bold text-center mb-4 text-gray-800"
         >
           My Skills
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
         >
-          Expertise in various technologies that help me create amazing web applications
+          Expertise in various technologies that help me create amazing web
+          applications
         </motion.p>
 
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-3 mb-12 px-4"
+          className="flex flex-wrap justify-center gap-3 mb-12"
         >
           {filters.map((filter) => (
             <button
@@ -61,9 +62,9 @@ function Skills() {
           ))}
         </motion.section>
 
-        <motion.div 
+        <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
         >
           {filteredSkills.map((item, index) => {
             const IconComponent =
@@ -80,24 +81,16 @@ function Skills() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-pink-100/50"
+                className="flex flex-col items-center gap-3"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="text-4xl text-pink-500 bg-pink-100 p-3 rounded-xl">
+                <div className="w-24 h-24 border-[3px] border-gray-200 rounded-2xl flex items-center justify-center hover:border-pink-500 hover:text-pink-500 transition-all duration-300 group bg-white hover:scale-105">
+                  <div className="text-4xl text-gray-600 group-hover:text-pink-500 transition-colors">
                     {IconComponent && <IconComponent />}
                   </div>
-                  <h2 className="text-xl font-bold text-gray-800">
-                    {item.title}
-                  </h2>
                 </div>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                <div className="mt-4 flex gap-2">
-                  {item.tags?.map((tag, idx) => (
-                    <span key={idx} className="text-xs px-2 py-1 bg-pink-50 text-pink-600 rounded-full">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <span className="text-sm font-medium text-gray-600">
+                  {item.title}
+                </span>
               </motion.div>
             );
           })}
