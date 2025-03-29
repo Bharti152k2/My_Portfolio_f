@@ -48,6 +48,9 @@ function Contact() {
       const data = await response.json();
 
       if (!response.ok || data.error) {
+        if (data.message.includes("configuration")) {
+          throw new Error("Server email service is temporarily unavailable. Please try again later or contact directly via email.");
+        }
         throw new Error(data.message || "Failed to send email");
       }
 
@@ -59,7 +62,7 @@ function Contact() {
     } catch (error) {
       console.error("Error details:", error);
       setResponseMessage({
-        text: error.message || "Failed to send message. Please try again.",
+        text: error.message,
         type: "error",
       });
     } finally {
