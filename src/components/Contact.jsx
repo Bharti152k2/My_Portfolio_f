@@ -10,7 +10,10 @@ function Contact() {
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [responseMessage, setResponseMessage] = useState({ text: '', type: '' });
+  const [responseMessage, setResponseMessage] = useState({
+    text: "",
+    type: "",
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +23,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setResponseMessage({ text: '', type: '' });
+    setResponseMessage({ text: "", type: "" });
 
     try {
       const response = await fetch(
@@ -30,10 +33,10 @@ function Contact() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Origin": "http://localhost:5173"
+            Accept: "application/json",
+            Origin: "https://my-portfolio-f-five.vercel.app",
+            // "Origin": "http://localhost:5173"
           },
-          credentials: "include",
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
@@ -43,17 +46,17 @@ function Contact() {
       );
 
       const data = await response.json();
-      
+
       if (!response.ok) {
         throw new Error(data.message || "Failed to send email");
       }
 
       setFormData({ name: "", email: "", message: "" });
-      setResponseMessage({ text: data.message, type: 'success' });
+      setResponseMessage({ text: data.message, type: "success" });
     } catch (error) {
-      setResponseMessage({ 
-        text: error.message || "Failed to send message. Please try again.", 
-        type: 'error' 
+      setResponseMessage({
+        text: error.message || "Failed to send message. Please try again.",
+        type: "error",
       });
     } finally {
       setIsLoading(false);
@@ -116,11 +119,13 @@ function Contact() {
             />
 
             {responseMessage.text && (
-              <div className={`p-4 rounded-lg ${
-                responseMessage.type === 'success' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-red-100 text-red-700'
-              }`}>
+              <div
+                className={`p-4 rounded-lg ${
+                  responseMessage.type === "success"
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-700"
+                }`}
+              >
                 {responseMessage.text}
               </div>
             )}
