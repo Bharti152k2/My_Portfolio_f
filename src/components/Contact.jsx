@@ -47,7 +47,7 @@ function Contact() {
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || data.error) {
         throw new Error(data.message || "Failed to send email");
       }
 
@@ -59,7 +59,7 @@ function Contact() {
     } catch (error) {
       console.error("Error details:", error);
       setResponseMessage({
-        text: "Server is starting up, please try again in a minute.",
+        text: error.message || "Failed to send message. Please try again.",
         type: "error",
       });
     } finally {
