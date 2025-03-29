@@ -37,7 +37,6 @@ function Contact() {
             // Origin: "https://my-portfolio-f-five.vercel.app",
             // "Origin": "http://localhost:5173"
           },
-          mode: "no-cors", // Add CORS mode
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
@@ -46,21 +45,16 @@ function Contact() {
         }
       );
 
-      if (response.status === 504) {
-        throw new Error("Server timeout. Please try again.");
+      // Handle the response without trying to parse JSON first
+      if (response.status === 200) {
+        setFormData({ name: "", email: "", message: "" });
+        setResponseMessage({
+          text: "Message sent successfully!",
+          type: "success",
+        });
+      } else {
+        throw new Error("Failed to send email. Please try again.");
       }
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send email");
-      }
-
-      setFormData({ name: "", email: "", message: "" });
-      setResponseMessage({
-        text: data.message || "Message sent successfully!",
-        type: "success",
-      });
     } catch (error) {
       console.error("Error details:", error);
       setResponseMessage({
