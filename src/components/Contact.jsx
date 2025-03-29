@@ -27,12 +27,13 @@ function Contact() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://my-portfolio-f-five.vercel.app",
           },
+          mode: "cors",
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
             message: formData.message,
-            to: "your-email@gmail.com" // Add your receiving email address
           }),
         }
       );
