@@ -33,10 +33,11 @@ function Contact() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
-            Origin: "https://my-portfolio-f-five.vercel.app",
+            // Accept: "application/json",
+            // Origin: "https://my-portfolio-f-five.vercel.app",
             // "Origin": "http://localhost:5173"
           },
+          mode: "cors", // Add CORS mode
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
@@ -45,6 +46,10 @@ function Contact() {
         }
       );
 
+      if (response.status === 504) {
+        throw new Error("Server timeout. Please try again.");
+      }
+
       const data = await response.json();
 
       if (!response.ok) {
@@ -52,10 +57,14 @@ function Contact() {
       }
 
       setFormData({ name: "", email: "", message: "" });
-      setResponseMessage({ text: data.message, type: "success" });
-    } catch (error) {
       setResponseMessage({
-        text: error.message || "Failed to send message. Please try again.",
+        text: data.message || "Message sent successfully!",
+        type: "success",
+      });
+    } catch (error) {
+      console.error("Error details:", error);
+      setResponseMessage({
+        text: error.message || "Network error. Please try again later.",
         type: "error",
       });
     } finally {
