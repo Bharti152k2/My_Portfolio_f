@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CustomInput from "./CustomInput";
-import CustomButton from "./custombutton";
+import CustomButton from "./CustomButton";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -28,7 +28,9 @@ function Contact() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold mb-4 text-gray-800">Get In Touch</h1>
+          <h1 className="text-5xl font-bold mb-4 text-gray-800">
+            Get In Touch
+          </h1>
           <div className="w-20 h-1 bg-pink-500 mx-auto rounded-full mb-8"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Feel free to reach out for collaborations or just a friendly hello
@@ -40,7 +42,9 @@ function Contact() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg"
         >
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">Send Message</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">
+            Send Message
+          </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <CustomInput
               label="Hello, My name is"
