@@ -27,9 +27,8 @@ function Contact() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://my-portfolio-f-five.vercel.app",
           },
-          mode: "cors",
+          mode: "no-cors",
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
@@ -38,17 +37,11 @@ function Contact() {
         }
       );
 
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send email");
-      }
-
       setFormData({ name: "", email: "", message: "" });
       alert("Message sent successfully!");
     } catch (error) {
       console.error("Error details:", error);
-      alert(error.message || "Failed to send message. Please try again.");
+      alert("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
