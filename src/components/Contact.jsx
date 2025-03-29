@@ -25,33 +25,16 @@ function Contact() {
     setIsLoading(true);
     setResponseMessage({ text: "", type: "" });
 
-    const fetchWithTimeout = async (url, options, timeout = 10000) => {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), timeout);
-
-      try {
-        const response = await fetch(url, {
-          ...options,
-          signal: controller.signal,
-        });
-        clearTimeout(timeoutId);
-        return response;
-      } catch (error) {
-        clearTimeout(timeoutId);
-        throw error;
-      }
-    };
-
     try {
-      const response = await fetchWithTimeout(
-        "https://portfolio-backend-eta-red.vercel.app/api/contact",
+      const response = await fetch(
         // "http://localhost:5001/api/contact",
+        "https://bharti-portfolio-b.onrender.com/api/contact",
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
-            // Accept: "application/json",
-            // Origin: "https://my-portfolio-f-five.vercel.app",
+            // "Content-Type": "application/json",
+            Accept: "application/json",
+            Origin: "https://my-portfolio-f-five.vercel.app",
             // "Origin": "http://localhost:5173"
           },
           body: JSON.stringify({
@@ -62,26 +45,25 @@ function Contact() {
         }
       );
 
-      if (response.status === 200) {
-        setFormData({ name: "", email: "", message: "" });
-        setResponseMessage({
-          text: "Message sent successfully!",
-          type: "success",
-        });
-      } else if (response.status === 504) {
-        throw new Error(
-          "Server is taking too long to respond. Please try again later."
-        );
-      } else {
-        throw new Error("Failed to send email. Please try again.");
+      if (response.status === 504) {
+        throw new Error("Server timeout. Please try again.");
       }
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send email");
+      }
+
+      setFormData({ name: "", email: "", message: "" });
+      setResponseMessage({
+        text: data.message || "Message sent successfully!",
+        type: "success",
+      });
     } catch (error) {
       console.error("Error details:", error);
       setResponseMessage({
-        text:
-          error.name === "AbortError"
-            ? "Request timed out. Please try again."
-            : error.message || "Network error. Please try again later.",
+        text: error.message || "Network error. Please try again later.",
         type: "error",
       });
     } finally {
