@@ -9,15 +9,42 @@ function Contact() {
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://portfolio-backend-eta-red.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      const data = await response.json();
+      setFormData({ name: "", email: "", message: "" });
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -76,8 +103,12 @@ function Contact() {
             />
 
             <div className="flex justify-end">
-              <CustomButton onClick={handleSubmit} isActive={true}>
-                Send Message
+              <CustomButton
+                onClick={handleSubmit}
+                isActive={!isLoading}
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Send Message"}
               </CustomButton>
             </div>
           </form>
