@@ -10,6 +10,7 @@ function Contact() {
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState({ text: '', type: '' });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,16 +20,20 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setResponseMessage({ text: '', type: '' });
 
     try {
       const response = await fetch(
-        "https://portfolio-backend-eta-red.vercel.app/api/contact",
+        "http://localhost:5001/api/contact",
+        // "https://portfolio-backend-eta-red.vercel.app/api/contact",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Origin": "http://localhost:5173"
           },
-          mode: "no-cors",
+          credentials: "include",
           body: JSON.stringify({
             name: formData.name,
             email: formData.email,
@@ -37,11 +42,19 @@ function Contact() {
         }
       );
 
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send email");
+      }
+
       setFormData({ name: "", email: "", message: "" });
-      alert("Message sent successfully!");
+      setResponseMessage({ text: data.message, type: 'success' });
     } catch (error) {
-      console.error("Error details:", error);
-      alert("Failed to send message. Please try again.");
+      setResponseMessage({ 
+        text: error.message || "Failed to send message. Please try again.", 
+        type: 'error' 
+      });
     } finally {
       setIsLoading(false);
     }
@@ -101,6 +114,16 @@ function Contact() {
               onChange={handleInputChange}
               required
             />
+
+            {responseMessage.text && (
+              <div className={`p-4 rounded-lg ${
+                responseMessage.type === 'success' 
+                  ? 'bg-green-100 text-green-700' 
+                  : 'bg-red-100 text-red-700'
+              }`}>
+                {responseMessage.text}
+              </div>
+            )}
 
             <div className="flex justify-end">
               <CustomButton
