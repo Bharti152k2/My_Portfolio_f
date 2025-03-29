@@ -25,10 +25,27 @@ function Contact() {
     setIsLoading(true);
     setResponseMessage({ text: "", type: "" });
 
+    const fetchWithTimeout = async (url, options, timeout = 10000) => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+      try {
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+        return response;
+      } catch (error) {
+        clearTimeout(timeoutId);
+        throw error;
+      }
+    };
+
     try {
-      const response = await fetch(
-        // "http://localhost:5001/api/contact",
+      const response = await fetchWithTimeout(
         "https://portfolio-backend-eta-red.vercel.app/api/contact",
+        // "http://localhost:5001/api/contact",
         {
           method: "POST",
           headers: {
@@ -45,20 +62,26 @@ function Contact() {
         }
       );
 
-      // Handle the response without trying to parse JSON first
       if (response.status === 200) {
         setFormData({ name: "", email: "", message: "" });
         setResponseMessage({
           text: "Message sent successfully!",
           type: "success",
         });
+      } else if (response.status === 504) {
+        throw new Error(
+          "Server is taking too long to respond. Please try again later."
+        );
       } else {
         throw new Error("Failed to send email. Please try again.");
       }
     } catch (error) {
       console.error("Error details:", error);
       setResponseMessage({
-        text: error.message || "Network error. Please try again later.",
+        text:
+          error.name === "AbortError"
+            ? "Request timed out. Please try again."
+            : error.message || "Network error. Please try again later.",
         type: "error",
       });
     } finally {
