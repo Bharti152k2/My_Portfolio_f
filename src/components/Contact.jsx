@@ -27,7 +27,10 @@ function Contact() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Origin": "https://my-portfolio-f-five.vercel.app"
           },
+          credentials: 'include',
           body: JSON.stringify(formData),
         }
       );
